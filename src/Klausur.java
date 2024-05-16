@@ -1,10 +1,12 @@
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Klausur {
@@ -14,17 +16,22 @@ public class Klausur {
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JLabel label = new JLabel("Vorname");
+        JPanel content = new JPanel();
+        frame.setContentPane(content);
 
-        label.setBounds(50, 20, 200, 30);
-        label.setFont(new Font("Verdana", Font.BOLD, 20));
-        frame.add(label);
+        JButton label1 = new JButton("Vorname");
+        content.add(label1);
+
+        JButton label2 = new JButton("Nachname");
+        content.add(label2);
+
+        JButton label3 = new JButton("Matrikelnummer");
+        content.add(label3);
+
+        JButton label4 = new JButton("Note");
+        content.add(label4);
 
         frame.setVisible(true);
-        label.setForeground(colorChooser(frame));
-
-        // modalDialog();
-
     }
 
     private Color colorChooser(JFrame frame) {
