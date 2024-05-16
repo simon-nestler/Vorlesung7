@@ -2,8 +2,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.LayoutManager;
 
+import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JDialog;
@@ -19,32 +21,41 @@ public class Klausur {
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel contentAussen = new JPanel();
-        JPanel contentInnen = new JPanel();
-        LayoutManager layout = new FlowLayout(FlowLayout.CENTER, 0, 0);
-        LayoutManager aussen = new BorderLayout(5, 5);
-        LayoutManager innen = new BorderLayout(5, 5);
+        JPanel content = new JPanel();
+        LayoutManager layout = new GridLayout(5, 2, 5, 5);
+        content.setLayout(layout);
 
-        contentAussen.setLayout(aussen);
-        contentInnen.setLayout(innen);
+        frame.setContentPane(content);
 
-        frame.setContentPane(contentAussen);
-        contentAussen.add(contentInnen, BorderLayout.CENTER);
+        JLabel label1 = new JLabel("Vorname");
+        content.add(label1);
 
-        JButton label1 = new JButton("Vorname");
-        contentInnen.add(label1, BorderLayout.NORTH);
+        JTextField textField1 = new JTextField();
+        content.add(textField1);
 
-        JButton label2 = new JButton("Nachname");
-        contentInnen.add(label2, BorderLayout.SOUTH);
+        JLabel label2 = new JLabel("Nachname");
+        content.add(label2);
 
-        JButton label3 = new JButton("Matrikelnummer");
-        contentAussen.add(label3, BorderLayout.WEST);
+        JTextField textField2 = new JTextField();
+        content.add(textField2);
 
-        JButton label4 = new JButton("Note");
-        contentInnen.add(label4, BorderLayout.CENTER);
+        JLabel label3 = new JLabel("Matrikelnummer");
+        content.add(label3);
 
-        JButton label5 = new JButton("Bestanden");
-        contentAussen.add(label5, BorderLayout.EAST);
+        JTextField textField3 = new JTextField();
+        content.add(textField3);
+
+        JLabel label4 = new JLabel("Note");
+        content.add(label4);
+
+        JTextField textField4 = new JTextField();
+        content.add(textField4);
+
+        JButton button1 = new JButton("Speichern");
+        content.add(button1);
+
+        JButton button2 = new JButton("Abbrechen");
+        content.add(button2);
 
         frame.setVisible(true);
     }
