@@ -1,5 +1,8 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.LayoutManager;
 
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
@@ -16,20 +19,32 @@ public class Klausur {
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel content = new JPanel();
-        frame.setContentPane(content);
+        JPanel contentAussen = new JPanel();
+        JPanel contentInnen = new JPanel();
+        LayoutManager layout = new FlowLayout(FlowLayout.CENTER, 0, 0);
+        LayoutManager aussen = new BorderLayout(5, 5);
+        LayoutManager innen = new BorderLayout(5, 5);
+
+        contentAussen.setLayout(aussen);
+        contentInnen.setLayout(innen);
+
+        frame.setContentPane(contentAussen);
+        contentAussen.add(contentInnen, BorderLayout.CENTER);
 
         JButton label1 = new JButton("Vorname");
-        content.add(label1);
+        contentInnen.add(label1, BorderLayout.NORTH);
 
         JButton label2 = new JButton("Nachname");
-        content.add(label2);
+        contentInnen.add(label2, BorderLayout.SOUTH);
 
         JButton label3 = new JButton("Matrikelnummer");
-        content.add(label3);
+        contentAussen.add(label3, BorderLayout.WEST);
 
         JButton label4 = new JButton("Note");
-        content.add(label4);
+        contentInnen.add(label4, BorderLayout.CENTER);
+
+        JButton label5 = new JButton("Bestanden");
+        contentAussen.add(label5, BorderLayout.EAST);
 
         frame.setVisible(true);
     }
