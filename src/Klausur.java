@@ -63,7 +63,7 @@ public class Klausur {
         // JButton button1 = new JButton("Speichern");
         // content.add(button1);
 
-        ImageIcon icon = new ImageIcon("thi.svg");
+        ImageIcon icon = new ImageIcon("images.png");
         icon.setImage(icon.getImage().getScaledInstance(35, -1, Image.SCALE_SMOOTH));
 
         JButton button2 = new JButton(icon);
