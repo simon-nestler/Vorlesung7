@@ -3,9 +3,11 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.LayoutManager;
 
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JDialog;
@@ -13,6 +15,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.border.EmptyBorder;
 
 public class Klausur {
 
@@ -22,6 +26,7 @@ public class Klausur {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel content = new JPanel();
+        content.setBorder(new EmptyBorder(10, 10, 10, 10));
         LayoutManager layout = new GridLayout(5, 2, 5, 5);
         content.setLayout(layout);
 
@@ -43,6 +48,7 @@ public class Klausur {
         content.add(label3);
 
         JTextField textField3 = new JTextField();
+        textField3.setToolTipText("Bitte geben Sie Ihre Matrikelnummer ohne führende 0 ein.");
         content.add(textField3);
 
         JLabel label4 = new JLabel("Note");
@@ -51,12 +57,19 @@ public class Klausur {
         JTextField textField4 = new JTextField();
         content.add(textField4);
 
-        JButton button1 = new JButton("Speichern");
-        content.add(button1);
+        JToggleButton toggleButton = new JToggleButton("Farbe");
+        content.add(toggleButton);
 
-        JButton button2 = new JButton("Abbrechen");
+        // JButton button1 = new JButton("Speichern");
+        // content.add(button1);
+
+        ImageIcon icon = new ImageIcon("thi.svg");
+        icon.setImage(icon.getImage().getScaledInstance(35, -1, Image.SCALE_SMOOTH));
+
+        JButton button2 = new JButton(icon);
         content.add(button2);
 
+        frame.pack();
         frame.setVisible(true);
     }
 
