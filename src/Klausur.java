@@ -10,11 +10,15 @@ public class Klausur {
     public Klausur() {
         JFrame frame = new JFrame("Klausur");
         frame.setSize(400, 300);
+        frame.setBackground(Color.BLUE);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel("Vorname");
 
         label.setBounds(50, 20, 200, 30);
+        label.setForeground(Color.RED);
+        label.setBackground(Color.YELLOW);
+        label.setFont(new Font("Verdana", Font.BOLD, 20));
         frame.add(label);
 
         frame.setVisible(true);
