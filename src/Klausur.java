@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -8,20 +9,32 @@ import javax.swing.JTextField;
 public class Klausur {
 
     public Klausur() {
-        JFrame frame = new JFrame("Klausur");
-        frame.setSize(400, 300);
-        frame.setBackground(Color.BLUE);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        /*
+         * JFrame frame = new JFrame("Klausur");
+         * frame.setSize(400, 300);
+         * frame.setBackground(Color.BLUE);
+         * frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         * 
+         * JLabel label = new JLabel("Vorname");
+         * 
+         * label.setBounds(50, 20, 200, 30);
+         * label.setForeground(Color.RED);
+         * label.setBackground(Color.YELLOW);
+         * label.setFont(new Font("Verdana", Font.BOLD, 20));
+         * frame.add(label);
+         * 
+         * frame.setVisible(true);
+         */
+        modalDialog();
+    }
 
-        JLabel label = new JLabel("Vorname");
-
-        label.setBounds(50, 20, 200, 30);
-        label.setForeground(Color.RED);
-        label.setBackground(Color.YELLOW);
-        label.setFont(new Font("Verdana", Font.BOLD, 20));
-        frame.add(label);
-
-        frame.setVisible(true);
+    private void modalDialog() {
+        JDialog dialog = new JDialog();
+        dialog.setTitle("Modaler Dialog");
+        dialog.setSize(400, 300);
+        dialog.setModal(true);
+        dialog.add(new JLabel("Bitte speichern Sie zunächst Ihre Änderungen!"));
+        dialog.setVisible(true);
     }
 
     private void methodenFuerKomponenten() {
